@@ -1,0 +1,47 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Notes</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Title</th>
+      <th>Desc</th>
+      <th>Category</th>
+      <th>Category name</th>
+      <th>Author</th>
+      <th>Author name</th>
+      <th>Content</th>
+      <th>Content html</th>
+      <th>Status</th>
+      <th>Is deleted</th>
+      <th>Deleted at</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @notes.each do |note| %>
+      <tr>
+        <td><%= note.title %></td>
+        <td><%= note.desc %></td>
+        <td><%= note.category_id %></td>
+        <td><%= note.category_name %></td>
+        <td><%= note.author_id %></td>
+        <td><%= note.author_name %></td>
+        <td><%= note.content %></td>
+        <td><%= note.content_html %></td>
+        <td><%= note.status %></td>
+        <td><%= note.is_deleted %></td>
+        <td><%= note.deleted_at %></td>
+        <td><%= link_to 'Show', note %></td>
+        <td><%= link_to 'Edit', edit_note_path(note) %></td>
+        <td><%= link_to 'Destroy', note, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Note', new_note_path %>

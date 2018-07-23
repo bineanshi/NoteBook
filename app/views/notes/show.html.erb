@@ -1,0 +1,61 @@
+<p id="notice"><%= notice %></p>
+<p>
+  <strong>Title:</strong>
+  <%= @note.title %>
+</p>
+
+<p>
+  <strong>Desc:</strong>
+  <%= @note.desc %>
+</p>
+
+<p>
+  <strong>Category:</strong>
+  <%= @note.category_id %>
+</p>
+
+<p>
+  <strong>Category name:</strong>
+  <%= @note.category_name %>
+</p>
+
+<p>
+  <strong>Author:</strong>
+  <%= @note.author_id %>
+</p>
+
+<p>
+  <strong>Author name:</strong>
+  <%= @note.author_name %>
+</p>
+
+<p>
+  <strong>Content:</strong>
+  <xmp theme="united" style="display:none;">
+  <%= @note.content.html_safe %>
+  </xmp>
+</p>
+
+<p>
+  <strong>Content html:</strong>
+  <%= @note.content_html %>
+</p>
+
+<p>
+  <strong>Status:</strong>
+  <%= @note.status %>
+</p>
+
+<p>
+  <strong>Is deleted:</strong>
+  <%= @note.is_deleted %>
+</p>
+
+<p>
+  <strong>Deleted at:</strong>
+  <%= @note.deleted_at %>
+</p>
+
+<%= link_to 'Edit', edit_note_path(@note) %> |
+<%= link_to 'Back', notes_path %>
+<script src="http://strapdownjs.com/v/0.2/strapdown.js"></script>
